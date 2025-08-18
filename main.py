@@ -1,43 +1,34 @@
-#Archivo de punto de entrada del programa (menu principal y flujo general)
-
-# Prueba de los metodos del árbol B
-import arbol_b
+from arbol_b import ArbolB
 from proveedor import Proveedor
-def main():
-    arbol = arbol_b.ArbolB(orden=3) #Claves maximas 2
-    #Insertar claves
+i = 0
+continuar = True
+Arbol_Proveedores = ArbolB(3)
+while(continuar):
+    print("Menu\n")
+    print("1. Registrar Proveedor")
+    print("2. Buscar Proveedores por servicio")
+    print("3. Visualizar proveedores y  Servicios")
+    print("4. buscar")
+    print("5. Salir")
 
-    proveedor1 = Proveedor(1, "Proveedor A", "Servicio A", 4.5)
-    proveedor2 = Proveedor(2, "Proveedor B", "Servicio B", 3.8)
-    proveedor3 = Proveedor(3, "Proveedor C", "Servicio C", 4.0) 
-    proveedor4 = Proveedor(4, "Proveedor D", "Servicio D", 5.0)
-    proveedor5 = Proveedor(5, "Proveedor E", "Servicio E", 2.5)
-    proveedor6 = Proveedor(6, "Proveedor F", "Servicio F", 3.0)
-    proveedor7 = Proveedor(7, "Proveedor G", "Servicio G", 4.2)
+    opcion_Menu = int(input("Escribe el numero de la opcion que deseas ejecutar"))
 
-    arbol.insertar(proveedor1)
-    print(f"Clave insertada: {proveedor1.id} - {proveedor1.nombre}")
-    arbol.insertar(proveedor2)
-    print(f"Clave insertada: {proveedor2.id} - {proveedor2.nombre}")
-    arbol.insertar(proveedor3)
-    print(f"Clave insertada: {proveedor3.id} - {proveedor3.nombre}")
-    arbol.insertar(proveedor4)
-    print(f"Clave insertada: {proveedor4.id} - {proveedor4.nombre}")
-    arbol.insertar(proveedor5)
-    print(f"Clave insertada: {proveedor5.id} - {proveedor5.nombre}")
-    arbol.insertar(proveedor6)
-    print(f"Clave insertada: {proveedor6.id} - {proveedor6.nombre}")
-    arbol.insertar(proveedor7)
-    print(f"Clave insertada: {proveedor7.id} - {proveedor7.nombre}")
-    arbol.mostrar()
+    if opcion_Menu == 1:
+        nombre = input("Escribe el nombre del Proveeor: ")
+        servicio = input("Escribe el servicio que ofree el proveedor: ")
+        calificacion = int(input("Escribe la calificacion promedio del proveedor: "))
 
-    # Buscar claves
-    print("Buscando proveedores...")
-    arbol.busqueda(1)
-    arbol.busqueda(6)
-    arbol.busqueda("Servicio A")
-    arbol.busqueda("fadsjdls")
-    print("-" * 30)
-    
+        Proveedor.agregar_proveedor("",i+1, nombre, servicio,calificacion)
+    elif opcion_Menu == 2:
+        servicio = input("Escribe el servicio que deseas buscar")
+        Arbol_Proveedores.busqueda(Arbol_Proveedores, servicio, None)
+    elif opcion_Menu == 3:
+        Arbol_Proveedores.recorrido_preorden()
+    elif opcion_Menu == 4:
+        key = int(input("escribe el Id de tu proveedro: "))
+        Arbol_Proveedores.buscar(key)
+    elif opcion_Menu == 5:
+        continuar = False
+    else:
+        print("Opcion incorrecta. Vuelva a intentarlo")
 
-main()

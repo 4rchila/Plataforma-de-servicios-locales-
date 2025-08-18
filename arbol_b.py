@@ -151,3 +151,15 @@ class ArbolB:
             else:
                 print(f"No se encontró ningún proveedor con '{valor}'")
             return encontrados
+
+    def recorrido_preorden(self, nodo_actual=None):
+        if nodo_actual is None:
+            nodo_actual = self.raiz
+
+        # Visitamos todas las claves del nodo primero
+        for clave in nodo_actual.claves:
+            print(clave)
+        
+        # Luego recorremos los hijos
+        for hijo in nodo_actual.hijos:
+            self.recorrido_preorden(hijo)
