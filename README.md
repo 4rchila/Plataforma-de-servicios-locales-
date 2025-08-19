@@ -42,4 +42,6 @@ Pablo José Lorenzo Arrivillaga - 1530324
 Rodrigo Gabriel Pérez Vásquez - 1576224
 
 ### Fuentes
-1. **Documentación de Python**
+1. **Documentación oficial de Python, https://docs.python.org/3/**
+2. **Documentación de Pyhton de W3 Schools, https://www.w3schools.com/python/default.asp**
+3. **Documentos trabajados en clase**
