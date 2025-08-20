@@ -44,7 +44,8 @@ while continuar:
             continue
 
         calificacion = obtener_calificacion()
-        nuevo_proveedor = Proveedor(contador_id + 1, nombre, servicio, calificacion)
+        contador_id +=1
+        nuevo_proveedor = Proveedor(contador_id , nombre, servicio, calificacion)
         arbol_proveedores.insertar(nuevo_proveedor)
         print("Proveedor agregado con éxito.")
         input("Presiona Enter para continuar...")
