@@ -66,6 +66,7 @@ while continuar:
     elif opcion_menu == 3:
         try:
             arbol_proveedores.listar_todos()
+            input()
         except Exception as e:
             print(f"Error al recorrer el árbol: {e}")
         input("Presiona Enter para continuar...")
